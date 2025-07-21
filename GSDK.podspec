@@ -1,29 +1,16 @@
-Pod::Spec.new do |spec|
-  spec.name         = "libGSDK"
-  spec.version      = "1.0.0"
-  spec.summary      = "libGSDK for Flutter iOS Bluetooth Printing"
-  spec.description  = <<-DESC
-                      Custom GSDK library integration for Flutter Bluetooth printing on iOS.
-                     DESC
-  spec.homepage     = "https://github.com/shishamchudal/gsdk"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "Shisham Chudal" => "your@email.com" }
-  spec.platform     = :ios, "10.0"
-  spec.source       = { :git => "https://github.com/shishamchudal/gsdk.git", :tag => "#{spec.version}" }
+Pod::Spec.new do |s|
+  s.name             = 'GSDK'
+  s.version          = '1.0.0'
+  s.summary          = 'A Bluetooth printing SDK for iOS.'
+  s.description      = 'GSDK allows printing to Bluetooth thermal printers from iOS.'
+  s.homepage         = 'https://github.com/shishamchudal/gsdk'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'Your Name' => 'your@email.com' }
+  s.source           = { :git => 'https://github.com/shishamchudal/gsdk.git', :tag => '1.0.0' }
 
-  # Source files
-  spec.source_files  = "GSDK/**/*.{h,m}"
-  spec.public_header_files = "GSDK/**/*.h"
+  s.platform     = :ios, '11.0'
+  s.requires_arc = true
+  s.source_files = 'GSDK/**/*.{h,m}'
 
-  # Framework dependencies
-  spec.frameworks = 'UIKit', 'Foundation', 'CoreBluetooth', 'ExternalAccessory'
-
-  # Allow non-modular headers in module
-  spec.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
-  }
-
-  # ARC support
-  spec.requires_arc = true
+  s.frameworks = 'CoreBluetooth', 'Foundation', 'UIKit'
 end
